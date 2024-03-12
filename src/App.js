@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import AddTodo from "./components/AddTodo";
+import TodoList from "./components/TodoList";
+import TodoFilter from "./components/TodoFilter";
+import { FilterProvider } from "./contexts/FilterContext";
+import GetUsers from "./components/GetUsers";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <FilterProvider>
+        <AddTodo />
+        <TodoList />
+        <TodoFilter />
+      </FilterProvider>
+      <GetUsers />
     </div>
   );
-}
+};
 
 export default App;

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const GetUsers = () => {
     const dispatch = useDispatch();
-    const users = useSelector(state => state.users);
+    const users = useSelector(state => state.users.users);
 
     const handleFetchUsers = () => {
         dispatch({ type: 'FETCH_USERS_REQUEST' });
